@@ -1,0 +1,15 @@
+Nombre BD:  consultorio
+user: con
+pass: 1234
+
+la BD deberá contener una tabla empleado de 5 columnas:
+
+id_empleado (INT / AI / PK)
+nombre (varchar: 50 todos)
+apellido
+usuario
+password
+
+para más detalles ver: empleado.sql (adjunto)
+
+Adrián Eze Angió - #2159

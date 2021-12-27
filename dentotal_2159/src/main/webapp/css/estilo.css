@@ -1,0 +1,282 @@
+* {
+  padding: 0;
+  margin:0;
+  gap: 0;
+  box-sizing: border-box; /*incluye borde y padding dentro del ancho total del elemento*/
+  line-height: 1.2em;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 98%;
+}  
+
+.ContenedorGrid {
+  display: grid;
+  min-width: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: PaleTurquoise;
+  padding: 10px;
+}
+
+.Navegacion, .Footer {
+  border-radius: 2.5em;
+}
+
+.Navegacion {
+  grid-area: Nav;
+  display: flex;
+  padding: 1em;
+  background-color: steelblue;
+  font-weight: bold;
+  place-items: center;
+}
+
+@media only screen and (max-width:720px) { /* Celulares hasta 720px*/
+  .ContenedorGrid {
+    grid-template: "Header" 12rem
+                         "Nav"  3rem  
+                         "MainC1" auto
+                         "MainC2" auto
+                         "Footer" 3rem;
+    }
+
+  .Navegacion {
+    justify-content: space-between;
+    box-shadow: 0.3rem 0.3rem 0.4rem black; /* offset-x | offset-y | blur-radius | color*/
+}
+  
+.H1 {
+  font-size: 3em;
+}
+
+.H2 {
+  font-size: 2em;
+}
+
+.SuperIndice { 
+    font-size:1.5em;
+}
+
+  body,input,textarea{
+      font-size:1.2rem;
+  }
+
+}
+
+
+@media only screen and (min-width:721px) { /*notebook, tablet, cel grandes con 720p < ancho < 1600px*/
+
+  .ContenedorGrid {
+    grid-template:  "Header Header" 12rem
+                    "Nav    Nav"    3rem
+                    "MainC1 MainC2" auto
+                    "Footer Footer" 3rem/
+                    1fr     1fr;
+  }
+  .Navegacion {
+    justify-content: space-between;
+    box-shadow: 0.3rem 0.3rem 0.4rem black; /* offset-x | offset-y | blur-radius | color */
+  }
+}
+
+@media only screen and (min-width: 1024px) { /* PC, TV, notebooks con monitor grande, min 1600px */
+  .ContenedorGrid {
+    grid-template:  "Header Header Header" 12rem
+                    "Nav    MainC1 MainC2" auto
+                    "Footer Footer Footer" 3rem/
+                    12rem   1fr 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .Navegacion {
+    padding-top: 4em;
+    justify-content: flex-start;
+    box-shadow: 0.3rem 0.3rem 0.4rem black; /* offset-x | offset-y | blur-radius | color */
+    flex-direction: column;
+    border-radius: 2.5rem 2.5rem 0 0;
+    max-height: 768px;
+  }
+
+  .Footer {
+  border-radius: 0 2.5rem 2.5rem 2.5rem;
+ }
+}
+
+.Encabezado {
+    grid-area: Header;
+    color: white;
+    text-shadow: 0.3rem 0.3rem 0.4rem black;
+    background-color: transparent; /*transparente así se ve la imagen detrás*/
+    text-align: center;
+    background-image: url("../fotos/banner4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 12rem;
+    box-shadow: 0 0 100px paleturquoise inset;
+    border-radius: 2.5em;
+}
+
+.H1 {
+ font-size: 2em;
+ font-family: 'Baumans', cursive;
+ padding-top: 1.8em;
+ font-weight: bold;
+}
+
+.H2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.SuperIndice { 
+  vertical-align:super;            /*superindice*/ 
+  font-size:0.6em;
+}
+  
+.EnlaceNav {
+  color: lightcyan;
+  text-decoration: none;
+  background-color:transparent;
+}
+
+.EnlaceNav:hover {
+  color: white;
+  text-decoration:underline;
+  text-shadow: 0 0 0.3rem lightsteelblue;
+}
+
+.EnlaceNav:active {
+  color: white;
+  text-decoration:underline;
+}
+
+.EnlaceNav {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.PrincipalC1 {
+  grid-area: MainC1;
+  margin: 5em;
+  place-items: center;
+}
+
+.H3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    padding-bottom: 1em;
+    margin-top: 1em;
+  }
+
+.PrincipalC2 {
+    grid-area: MainC2;
+    margin: 5em;
+}
+
+.ListaDes {
+   font-size: 1em;
+}
+
+.FotoStaff, .Mapa {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  min-width: 250px;
+  margin: auto;
+  display: block;
+  place-items: center;
+}
+
+
+/*ligero efecto/transcisión de zoom al pasar el mouse por sobre la foto del staff*/
+.FotoStaff img {
+  transition: transform .5s ease;
+}
+
+.FotoStaff:hover img {
+  transform: scale(1.1);
+}
+
+.EnlacePag {
+  color: black;
+}
+
+.EnlacePag:hover, .EnlaceTel:hover {
+  color: white;
+  background-color: steelblue;
+  text-decoration: none;
+}
+
+.EnlaceTel,.EnlaceWhatsapp,.EnlaceFB {
+  color: black;
+  text-decoration: none;
+}
+
+.EnlaceWhatsapp:hover {
+  color: forestgreen;
+  text-decoration: none;
+}
+
+.EnlaceFB:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+/*un poco de estilo al formulario*/
+input:focus, textarea:focus {
+  background: white;
+  outline: none;
+}
+
+form{
+  background-color: transparent;
+}
+
+form input, form textarea{
+  width: 100%;
+  border: none; 
+  color: #525c66; 
+  font-size: 1em;
+  resize: horizontal; 
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.Boton {
+   padding: 0.5rem;
+  margin: 0.5rem;
+  border: 0;
+  border-radius: 2rem;
+  background: steelblue;
+  color: white;
+}
+
+.Footer {
+    grid-area: Footer;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: steelblue;
+    box-shadow: 0.3rem 0.3rem 0.4rem black; /* offset-x | offset-y | blur-radius | color */
+    place-items: center;
+    place-content: center;
+}
+
+.Diseño {
+  font-size: 0.8rem;
+  display: inline;
+}
+
+.NegritaCursiva {
+  font-weight: bold;
+  font-style: italic;
+}

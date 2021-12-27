@@ -1,0 +1,3 @@
+El primer ingreso (admin por default) es con:
+admin / 2435
+Sino habrá que cargar usuario y password en la BD consultorio/empleado
